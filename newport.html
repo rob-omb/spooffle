@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body {
+				padding: 0;
+				margin: 0;
+				background-color: black;
+				height: 100vh;
+				min-height: 1200px;
+				overflow: hidden;
+			}
+
+			.container {
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				background-color: black;
+			
+				.box-top {
+					background-color: mintcream;
+					flex-grow: 1;
+					max-height: 222px;
+					min-height: 222px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					h1 {
+						color: #283939;
+						font-size: 112px;
+						font-family: 'Helvetica Neue';
+						letter-spacing: -7px;
+						margin: 0;
+						padding: 5% 0 0 0;
+						transform: translateX(-7px);
+					}
+				}
+
+				.gold-bar {
+					min-height: 24px;
+					background-image: linear-gradient(90deg, #F4E167, #EDA82D);
+				}
+
+				#background {
+					background-color: cyan;
+
+					.line {
+						width: 100%;
+						background-color: black;
+					}
+				}
+			}
+
+
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="box-top">
+				<h1>Rob Kerr</h1>
+			</div>
+			<div class="gold-bar"></div>
+			<div id="background"></div>
+		</div>
+
+		<script>
+			const background = document.getElementById('background');
+			const magic = 14;
+
+			for (var i = 1; i <= magic; i = i + 0.25) {
+				const line = document.createElement('div');
+				line.className = 'line';
+				line.style.height = `${i}px`;
+				line.style.marginTop = `${magic - i}px`;
+				background.appendChild(line);
+			}
+		</script>
+	</body>
+</html>
