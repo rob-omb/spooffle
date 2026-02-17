@@ -1,0 +1,110 @@
+<html lang="en-CA">
+<head>
+  <style>
+    @font-face {
+      font-family: 'Gefika';
+      src: url("./typefaces/Gefika.otf");
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      padding: 16px;
+      background-color: #fafafa;
+    }
+
+    .pack {
+      background-color: #ff9500;
+      width: 444px;
+      height: 680px;
+    }
+
+    .grid-dots {
+      display: grid;
+      justify-content: center;
+      background-color: #1a1a1a;
+      gap: 9px;
+      padding-top: 4px;
+      box-sizing: border-box;
+      grid-template-columns: repeat(26, 8px);
+      grid-template-rows: repeat(29, 8px);
+      height: 494px;
+
+      .dots {
+        background-color: #efecde;
+      }
+    }
+
+    .name {
+      display: grid;
+      align-items: center;
+      background-color: #efecde;
+      width: fit-content;
+      justify-self: center;
+      transform: translateY(-50%);
+      padding: 4px 8px;
+
+      h1 {
+        font-family: Gefika, sans-serif;
+        text-box: trim-both cap alphabetic;
+        font-size: 55px;
+        letter-spacing: 1px;
+        padding: 8px 0;
+        text-wrap: nowrap;
+        /*
+          background gradient and text-shadow don't play together.
+          one or the other for now.
+        */
+        /*background: linear-gradient(*/
+        /*  to bottom,*/
+        /*  #a69a80 10%,*/
+        /*  #b4a67e 40%,*/
+        /*  #3a2c0f 90%*/
+        /*);*/
+        text-shadow:
+          -1px -1px 1px rgb(117, 106, 74),
+          0 2px 2px rgba(182, 168, 140, 1);
+
+        /*-webkit-background-clip: text;*/
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .tag-line {
+      color: #ffe399;
+      font-family: 'Avenir Next Condensed', sans-serif;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.8px;
+    }
+  </style>
+  <title>rohiba</title>
+</head>
+<body>
+  <div class="pack">
+    <div class="grid-dots" id="grid-dots"></div>
+    <div class="name">
+      <h1>ROB KERR</h1>
+    </div>
+    <div class="tag-line">100% Web Developer</div>
+  </div>
+  <script>
+    const grid = document.getElementById('grid-dots');
+    const rows = 29;
+    const columns = 26;
+    const totalDots = rows * columns;
+
+    for (let i = 1; i <= totalDots; i = i + 1) {
+        const dot = document.createElement('div');
+        dot.className = 'dots';
+
+        grid.appendChild(dot);
+    }
+  </script>
+</body>
+</html>
